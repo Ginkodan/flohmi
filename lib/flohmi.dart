@@ -7,5 +7,9 @@ class Flohmi {
   final DateTime date;
 
   Flohmi({
-    @required this.id, @required this.title, @required this.plz, @required this.date});
+    @required this.id,
+    @required this.title,
+    @required this.plz,
+    @required this.date,
+  });
 }
