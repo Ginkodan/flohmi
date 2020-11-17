@@ -1,3 +1,4 @@
+import 'package:flohmi/flohmi.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -5,6 +6,10 @@ void main() {
 }
 
 class FlohmiApp extends StatelessWidget {
+  final List<Flohmi> flohmi = [
+    Flohmi(id: 'id1', title: 'flohmi 1', plz: 3507, date: DateTime.now(),),
+    Flohmi(id: 'id2', title: 'flohmi 2', plz: 3507, date: DateTime.now(),),
+  ];
   Widget build(BuildContext context) {
     return MaterialApp(
       home: Scaffold(
@@ -14,6 +19,7 @@ class FlohmiApp extends StatelessWidget {
         mainAxisAlignment: MainAxisAlignment.spaceAround,
         crossAxisAlignment: CrossAxisAlignment.stretch,
           children: [
+            
             Column(
               children: [
                 Container(
@@ -35,9 +41,14 @@ class FlohmiApp extends StatelessWidget {
                 ),
             ),
               ],
-            )
-
+            ),
+            Column(children: flohmi.map((fl) {
+              return Card(child: Text(fl.title),);
+            }).toList()
+            ),
           ],
+          
+
         ),
       ),
     );
