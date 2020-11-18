@@ -21,6 +21,8 @@ class FlohmiApp extends StatelessWidget {
       date: DateTime.now(),
     ),
   ];
+  String titleInput;
+  String plzInput;
   Widget build(BuildContext context) {
     return MaterialApp(
       home: Scaffold(
@@ -28,12 +30,12 @@ class FlohmiApp extends StatelessWidget {
           title: Text('Flohmi'),
         ),
         body: Column(
-          mainAxisAlignment: MainAxisAlignment.spaceAround,
+          //mainAxisAlignment: MainAxisAlignment.spaceAround,
           crossAxisAlignment: CrossAxisAlignment.stretch,
           children: [
             Column(
               children: [
-                Container(
+/*                 Container(
                   margin: EdgeInsets.symmetric(vertical: 10, horizontal: 15),
                   padding: EdgeInsets.all(10),
                   decoration: BoxDecoration(
@@ -58,7 +60,34 @@ class FlohmiApp extends StatelessWidget {
                         fontSize: 20,
                         color: Colors.greenAccent,
                       )),
-                ),
+                ), */
+                Card(
+                  child: Container(
+                    padding: EdgeInsets.all(10),
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.end,
+                      children: [
+                        TextField(
+                          decoration: InputDecoration(labelText: 'Flohmi'),
+                          onChanged: (value) => titleInput,
+                        ),
+                        TextField(
+                          decoration:
+                              InputDecoration(labelText: 'Postleitzahl'),
+                          onChanged: (value) => plzInput,
+                        ),
+                        FlatButton(
+                          onPressed: () {
+                            print(titleInput);
+                            print(plzInput);
+                          },
+                          child: Text('Neuer Flohmi'),
+                          textColor: Colors.purple,
+                        )
+                      ],
+                    ),
+                  ),
+                )
               ],
             ),
             Column(
