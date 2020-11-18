@@ -35,32 +35,6 @@ class FlohmiApp extends StatelessWidget {
           children: [
             Column(
               children: [
-/*                 Container(
-                  margin: EdgeInsets.symmetric(vertical: 10, horizontal: 15),
-                  padding: EdgeInsets.all(10),
-                  decoration: BoxDecoration(
-                      border: Border.all(color: Colors.black, width: 2)),
-                  child: Text(
-                    "Sign in",
-                    style: TextStyle(
-                      fontWeight: FontWeight.bold,
-                      fontSize: 20,
-                      color: Colors.purple,
-                    ),
-                  ),
-                ),
-                Container(
-                  margin: EdgeInsets.symmetric(vertical: 10, horizontal: 15),
-                  padding: EdgeInsets.all(10),
-                  decoration: BoxDecoration(
-                      border: Border.all(color: Colors.black, width: 2)),
-                  child: Text("Create a new account",
-                      style: TextStyle(
-                        fontWeight: FontWeight.bold,
-                        fontSize: 20,
-                        color: Colors.greenAccent,
-                      )),
-                ), */
                 Card(
                   child: Container(
                     padding: EdgeInsets.all(10),
@@ -69,12 +43,12 @@ class FlohmiApp extends StatelessWidget {
                       children: [
                         TextField(
                           decoration: InputDecoration(labelText: 'Flohmi'),
-                          onChanged: (value) => titleInput,
+                          onChanged: (value) => titleInput = value,
                         ),
                         TextField(
                           decoration:
                               InputDecoration(labelText: 'Postleitzahl'),
-                          onChanged: (value) => plzInput,
+                          onChanged: (value) => plzInput = value,
                         ),
                         FlatButton(
                           onPressed: () {
